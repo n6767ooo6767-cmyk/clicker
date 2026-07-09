@@ -289,5 +289,16 @@
 
         updateUI();
     </script>
+    <script>
+    // Добавим кнопку, которая точно отправит запрос
+    document.getElementById("click-target").addEventListener("click", () => {
+        console.log("Пытаюсь отправить запрос на сервер...");
+        fetch("https://plug-unmatched-defective.ngrok-free.dev/api/test", {
+            method: 'GET'
+        })
+        .then(res => console.log("Ответ получен!"))
+        .catch(err => console.error("Ошибка соединения:", err));
+    });
+</script>
 </body>
 </html>
